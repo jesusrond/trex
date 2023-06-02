@@ -75,11 +75,11 @@ function draw() {
   fill("white")
   text("Puntuación: " + score, width-150,50);
 
-  if(gameState === PLAY){
+  if(touches.length > 0 ||gameState === PLAY){
     if(keyDown("space") && trex.y >= 200) {
       saltar.play();
       trex.velocityY = -10;
-   
+      touches=[];
       
           }    
     trex.velocityY = trex.velocityY + 0.8
