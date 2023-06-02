@@ -117,10 +117,10 @@ function draw() {
     nubesGroup.setVelocityXEach(0);
     obstaculosGrupo.setLifetimeEach(-1);
     nubesGroup.setLifetimeEach(-1);
-    
-    if(touches.length > 0 || mousePressedOver(restart) || mousePressedOver(gameOver)){
+    if(touches.length > 0){touches=[];}
+    if(mousePressedOver(restart) || mousePressedOver(gameOver)){
       resert();
-      touches=[];
+      
     }
   }
   
