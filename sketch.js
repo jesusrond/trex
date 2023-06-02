@@ -75,8 +75,8 @@ function draw() {
   fill("white")
   text("Puntuación: " + score, width-150,50);
 
-  if(touches.length > 0 ||gameState === PLAY){
-    if(keyDown("space") && trex.y >= 200) {
+  if(gameState === PLAY){
+    if(touches.length > 0 ||keyDown("space") && trex.y >= 200) {
       saltar.play();
       trex.velocityY = -10;
       touches=[];
@@ -117,8 +117,10 @@ function draw() {
     nubesGroup.setVelocityXEach(0);
     obstaculosGrupo.setLifetimeEach(-1);
     nubesGroup.setLifetimeEach(-1);
-    if(mousePressedOver(restart) || mousePressedOver(gameOver)){
+    
+    if(touches.length > 0 || mousePressedOver(restart) || mousePressedOver(gameOver)){
       resert();
+      touches=[];
     }
   }
   
